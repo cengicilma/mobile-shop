@@ -1,20 +1,12 @@
 {
-  "name": "mobileshop",
+  "name": "mobileshopee",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "../sass ./sass/style.scss style.css --watch"
+    "start": "sass ./sass/style.scss style.css --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cengicilma/mobile-shop.git"
-  },
-  "author": "ilma&merjem",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cengicilma/mobile-shop/issues"
-  },
-  "homepage": "https://github.com/cengicilma/mobile-shop#readme"
+  "author": "akshay kashyap",
+  "license": "ISC"
 }
