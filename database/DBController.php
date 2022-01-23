@@ -10,7 +10,7 @@ class DBController
     //protected $database = "heroku_5320e771ab01e00";
 
     // connection property
-    //public $con = null;
+    public $con = null;
 
     // call constructor
     public function __construct()
@@ -26,11 +26,11 @@ class DBController
         $query_builder = TRUE;
 
         // Connect to DB
-        $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+        $con = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 
 
        // $this->con = mysqli_connect($this->host, $this->user, $this->password, $this->database);
-        if ($conn->connect_error){
+        if ($con->connect_error){
             echo "Fail " . $this->con->connect_error;
         }
     }
