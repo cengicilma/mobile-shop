@@ -4,10 +4,10 @@
 class DBController
 {
     // Database Connection Properties
-    protected $host = 'localhost:3307';
-    protected $user = 'ilma';
-    protected $password = 'ilma';
-    protected $database = "shopee";
+    //protected $host = 'localhost:3307';
+    //protected $user = 'ilma';
+    //protected $password = 'ilma';
+    //protected $database = "shopee";
 
     // connection property
     public $con = null;
@@ -15,7 +15,20 @@ class DBController
     // call constructor
     public function __construct()
     {
-        $this->con = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+        //Get Heroku ClearDB connection information
+        $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+        $cleardb_server = $cleardb_url["host"];
+        $cleardb_username = $cleardb_url["user"];
+        $cleardb_password = $cleardb_url["pass"];
+        $cleardb_db = substr($cleardb_url["path"],1);
+        $active_group = 'default';
+        $query_builder = TRUE;
+
+        // Connect to DB
+        $this->con = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+
+
+        //$this->con = mysqli_connect($this->host, $this->user, $this->password, $this->database);
         if ($this->con->connect_error){
             echo "Fail " . $this->con->connect_error;
         }
