@@ -4,10 +4,10 @@
 class DBController
 {
     // Database Connection Properties
-    protected $host = 'eu-cdbr-west-02.cleardb.net';
-    protected $user = 'bb318d7035ad99';
-    protected $password = '860606f2';
-    protected $database = "heroku_5320e771ab01e00";
+    protected $host = 'remotemysql.com';
+    protected $user = 'HE3Yb7najI';
+    protected $password = 'H7k5uNcgQb';
+    protected $database = 'HE3Yb7najI';
 
     // connection property
     public $con = null;
@@ -30,7 +30,7 @@ class DBController
 
 
         $this->con = mysqli_connect($this->host, $this->user, $this->password, $this->database);
-        if (this->$con->connect_error){
+        if ($this->con->connect_error){
             echo "Fail " . $this->con->connect_error;
         }
     }
