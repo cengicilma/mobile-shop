@@ -5,6 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.apache.maven.model.Organization;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 
@@ -64,22 +65,17 @@ public class MainPageTest {
     @Order(4)
     @Test
     public void cartPage(){
-        mainPage.addToCartBtn.click();
-
-    }
-   /* @Test
-    public void toolsMenu() {
-        mainPage.toolsMenu.hover();
-
-        $(".menu-main__popup-wrapper").shouldBe(visible);
+        mainPage.cartBtn.click();
+        mainPage.shoppingCartTitle.shouldBe(visible);
     }
 
+    @Order(5)
     @Test
-    public void navigationToAllTools() {
-        mainPage.seeAllToolsButton.click();
-
-        $(".products-list").shouldBe(visible);
-
-        assertEquals("All Developer Tools and Products by JetBrains", Selenide.title());
-    }*/
+    public void deleteFromCart(){
+        mainPage.cartBtn.click();
+        int cartNumber = Integer.parseInt(mainPage.cartNumber.getValue());
+        mainPage.deleteFromCart.click();
+        cartNumber--;
+        assertEquals(cartNumber, Integer.parseInt(mainPage.cartNumber.getValue()));
+    }
 }

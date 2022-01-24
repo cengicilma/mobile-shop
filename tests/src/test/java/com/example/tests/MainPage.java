@@ -33,11 +33,11 @@ public class MainPage {
     public SelenideElement addToCartBtn = $(By.xpath("//*[@id=\"special-price\"]/div/div[2]/div[1]/div/div/div/form/button"));
 
     public SelenideElement cartBtn = $(".fa-shopping-cart");
+    public SelenideElement shoppingCartTitle = $(By.xpath("//h5[text()=\'Shopping Cart\']"));
 
+    public SelenideElement deleteFromCart = $(By.xpath("//*[@id=\"cart\"]/div/div/div[1]/div[1]/div[2]/div[2]/form[1]/button"));
 
-
-
-
+    public SelenideElement addToWishlistBtn = $(By.xpath("//*[@id=\"cart\"]/div/div/div[1]/div[1]/div[2]/div[2]/form[2]/button"));
 
 }
 
